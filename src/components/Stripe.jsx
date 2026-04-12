@@ -1,17 +1,22 @@
-import React from 'react'
 
-const Stripe = ({val}) => {
-
-     
-
+const Stripe = ({ val, isLast, isFirst }) => {
   return (
-    <div className='w-[16.66%] px-4 py-5 border-t border-r  border-b flex justify-between'>
-      <img src={val.url} alt="img" />
-      <span className='text-green-500 font-semibold'>{val.number}</span>
-      
+    <div
+      className={`flex items-center justify-between px-4 py-5 border-t border-b 
+      ${!isLast ? 'border-r' : ''} 
+      ${!isFirst ? 'border-l' : ''}`}
+    >
+      <img
+        src={val.url}
+        alt="logo"
+        className="h-8 object-contain"
+      />
 
+      <span className='font-semibold text-lg'>
+        {val.number}
+      </span>
     </div>
   )
 }
 
-export default Stripe;
+export default Stripe
