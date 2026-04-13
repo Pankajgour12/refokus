@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Products from './components/Products'
 import Stripes from './components/Stripes'
 import Work from './components/Work'
+import Footer from './Footer'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
    <Products/>
    <Marquees/>
    <Cards/>
+   <Footer/>
   </div>
   )
 }
