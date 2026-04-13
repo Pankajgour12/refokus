@@ -13,6 +13,8 @@ const Marquees = () => {
     { url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2d275e1d5aa08ccc379dd_ypo.svg" },
     { url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2d275909535ff431975cf_lavender.svg" },
     { url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2ce14e6c85b010c2e1e3c_Logo%20White%201.svg" },
+    { url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2d27565c41bb608f7f7c0_rainfall.svg" },
+
     { url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2d36963b956910ca67534_remind.svg" }
   ],
   [
@@ -31,9 +33,9 @@ const Marquees = () => {
 
 
   return (
-    <div className='py-20 mt-32'>
+    <div className='py-20 mt-20'>
        {imagesData.map((images, index)=>(
-        <Marquee key={index} images={images}/>
+        <Marquee key={index} direction={index === 0 ? "left" : "right"} images={images}/>
       ))}
     </div>
   )
