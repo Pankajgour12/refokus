@@ -19,7 +19,7 @@ const Card = ({width , start , para , hover}) => {
             start && (
                 <>
                  <h1 className="text-6xl font-semibold tracking-tight leading-none">Start a project</h1>
-            <button className="rounded-full mt-5 py-2 px-5 border border-zinc-50">Contact Us </button>
+            <button className="rounded-full mt-5 py-2 px-5 border hover:bg-stone-800 border-zinc-50">Contact Us </button>
              </>
             ) 
             
