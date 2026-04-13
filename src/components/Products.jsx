@@ -36,29 +36,99 @@ const Products = () => {
     },
   ];
 
-  const [pos ,setPos] = useState(0)
+  const [pos, setPos] = useState(0);
 
-  const mover = (val)=>{
-    setPos(val * 23)
-  }
-
+  const mover = (val) => {
+    setPos(val * 23);
+  };
 
   return (
     <div className="relative mt-32 ">
-      {products.map((item,idx)=>(
+      {products.map((item, idx) => (
         <Product key={idx} count={idx} data={item} mover={mover} />
       ))}
       <div className="absolute top-0 w-full h-full pointer-events-none  ">
-
         <motion.div
-        initial={{y:pos , x: "-50%"}}
-        animate ={{y: pos + `rem`}}
-         className="window absolute w-lg h-[23rem]  left-[44%] overflow-hidden">
-          <div className="w-full h-full bg-sky-300"></div>
-          <div className="w-full h-full bg-sky-400"></div>
-          <div className="w-full h-full bg-sky-300"></div>
-          <div className="w-full h-full bg-sky-800"></div>
-          <div className="w-full h-full bg-sky-300"></div>
+          initial={{ y: pos, x: "-50%" }}
+          animate={{ y: pos + `rem` }}
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
+          className="window absolute w-lg h-[23rem]  left-[44%] overflow-hidden"
+        >
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full"
+          >
+            <video
+              muted
+              autoPlay
+              loop
+              src="https://refocus-clone-aman.vercel.app/assets/arqitel-D3jJRwFT.mp4"
+            ></video>
+          </motion.div>
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full "
+          >
+            <video
+              muted
+              autoPlay
+              loop
+              src="https://refokuzzz-cloned.vercel.app/assets/ttr-C2lTQdRZ.webm"
+            ></video>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full"
+          >
+            <video
+              muted
+              autoPlay
+              loop
+              src="https://refocus-clone-aman.vercel.app/assets/yir-BzJiRbqx.mp4"
+            ></video>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full "
+          >
+            <video
+              muted
+              autoPlay
+              loop
+              src="https://refokuzzz-cloned.vercel.app/assets/yahoo--FL9ySUE.webm"
+            ></video>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full "
+          >
+            <video
+              muted
+              autoPlay
+              loop
+              src="https://refocus-clone-aman.vercel.app/assets/rainfall-BZC7HG1T.mp4"
+            ></video>
+          </motion.div>
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full "
+          >
+            <video
+              muted
+              autoPlay
+              loop
+              src="https://refocus-clone-aman.vercel.app/assets/rainfall-BZC7HG1T.mp4"
+            ></video>
+          </motion.div>
         </motion.div>
       </div>
     </div>
