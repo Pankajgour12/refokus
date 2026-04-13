@@ -1,5 +1,6 @@
-import React from "react";
+import { motion } from "motion/react";
 import Product from "./Product";
+import { useState } from "react";
 
 const Products = () => {
   const products = [
@@ -35,11 +36,31 @@ const Products = () => {
     },
   ];
 
+  const [pos ,setPos] = useState(0)
+
+  const mover = (val)=>{
+    setPos(val * 23)
+  }
+
+
   return (
-    <div className="mt-32">
+    <div className="relative mt-32 ">
       {products.map((item,idx)=>(
-        <Product key={idx} data={item} />
+        <Product key={idx} count={idx} data={item} mover={mover} />
       ))}
+      <div className="absolute top-0 w-full h-full pointer-events-none  ">
+
+        <motion.div
+        initial={{y:pos , x: "-50%"}}
+        animate ={{y: pos + `rem`}}
+         className="window absolute w-lg h-[23rem]  left-[44%] overflow-hidden">
+          <div className="w-full h-full bg-sky-300"></div>
+          <div className="w-full h-full bg-sky-400"></div>
+          <div className="w-full h-full bg-sky-300"></div>
+          <div className="w-full h-full bg-sky-800"></div>
+          <div className="w-full h-full bg-sky-300"></div>
+        </motion.div>
+      </div>
     </div>
   );
 };
